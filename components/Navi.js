@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
-import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai'
+import { AiFillPlaySquare, AiOutlinePlaySquare } from 'react-icons/ai'
 import {
     RiUser5Line, RiUser5Fill,
-    RiNewspaperFill, RiNewspaperLine
+    RiNewspaperFill, RiNewspaperLine,
+    RiGroup2Fill, RiGroup2Line
 } from 'react-icons/ri'
 
 import Image from 'next/image'
@@ -26,8 +27,11 @@ const Navi = props => {
             case 'news':
                 router.push('/news')
                 break;
-            case 'saved':
-                router.push('/saved')
+            case 'group':
+                router.push('/group')
+                break;
+            case 'open':
+                router.push('/open')
                 break;
             case 'account':
                 router.push('/account')
@@ -36,10 +40,10 @@ const Navi = props => {
                 router.push('/home')
                 break;
         }
-    }, [activeTabs, router])
+    }, [activeTabs])
 
     return (
-        <div className='w-full h-full flex justify-center items-center'>
+        <div className='w-full h-full flex justify-around items-center'>
             <div className={tabClass}>
                 <div className={imgContainerClass}>
                     <Image className={imgClass}
@@ -62,16 +66,29 @@ const Navi = props => {
                     />}
             </div>
             <div className={tabClass}>
-                {activeTabs === 'saved' ?
-                    <AiFillHeart
+                {activeTabs === 'group' ?
+                    <RiGroup2Fill
                         size='35'
                         color='#000'
-                        onClick={() => setActiveTabs('saved')}
+                        onClick={() => setActiveTabs('group')}
                     /> :
-                    <AiOutlineHeart
+                    <RiGroup2Line
                         size='35'
                         color='#000'
-                        onClick={() => setActiveTabs('saved')}
+                        onClick={() => setActiveTabs('group')}
+                    />}
+            </div>
+            <div className={tabClass}>
+                {activeTabs === 'open' ?
+                    <AiFillPlaySquare
+                        size='35'
+                        color='#000'
+                        onClick={() => setActiveTabs('open')}
+                    /> :
+                    <AiOutlinePlaySquare
+                        size='35'
+                        color='#000'
+                        onClick={() => setActiveTabs('open')}
                     />}
             </div>
             <div className={tabClass}>
