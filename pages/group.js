@@ -4,19 +4,17 @@ import Channel from '@sendbird/uikit-react/Channel'
 import ChatHeader from "../components/ChatHeader";
 import ChannelPreview from "../components/ChannelPreview";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export default function App() {
   const [channel, setChannel] = useState(null);
 
   const onChannelSelect = (_channel) => {
     setChannel(_channel);
-    window.history.pushState({}, _channel.name, "/" + _channel.url);
   };
 
   const onBack = () => {
     setChannel(null);
-    window.history.pushState({}, document.title, "/");
   };
 
   return (

@@ -13,7 +13,7 @@ const ChatHeader = ({ channel, onBack }) => {
             <Image width={20} heigth={20} src={IconArrowLeft} alt="Back button" />
             </button>
             <span>{channel.name? channel.name : `Group of ${channel.memberCount}`}</span>
-            <span>{user.nickname? user.nickname : user.userId}</span>
+            <span>{(user.nickname? user.nickname : user.userId) + `[${channel.memberCount}]`}</span>
         </div>
     )
 }
