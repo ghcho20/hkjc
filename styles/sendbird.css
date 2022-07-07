@@ -88,3 +88,9 @@ html {
   border: none;
   background: transparent;
 }
+
+.sendbird-message-input {
+  margin-left: auto;
+  flex: 1;
+  text-align: left;
+}
