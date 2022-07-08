@@ -1,4 +1,3 @@
-import '@sendbird/uikit-react/dist/index.css'
 import ChannelList from '@sendbird/uikit-react/ChannelList'
 import Channel from '@sendbird/uikit-react/Channel'
 import ChatHeader from "../components/ChatHeader";
@@ -18,7 +17,7 @@ export default function Group() {
   };
 
   return (
-    <div className="App">
+    <div className="App w-full h-full">
         {channel ? (
           <Channel
             channelUrl={channel.url}

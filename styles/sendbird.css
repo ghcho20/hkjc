@@ -1,38 +1,11 @@
-body,
-html {
-  padding: 0;
-  margin: 0;
-}
-
 .App {
   font-family: sans-serif;
   text-align: center;
-  height: 100%;
-  width: 100%;
 }
 
 .App .sendbird-channel-header,
 .App .sendbird-channel-list {
   width: 100%;
-}
-
-.App .sendbird-message-content.incoming .sendbird-message-content__middle,
-.App .sendbird-message-content.outgoing .sendbird-message-content__middle {
-  max-width: calc(100% - 70px);
-}
-.App
-  .sendbird-message-content.outgoing
-  .sendbird-message-content__middle
-  .sendbird-message-content__middle__body-container,
-.App
-  .sendbird-message-content.incoming
-  .sendbird-message-content__middle
-  .sendbird-message-content__middle__body-container {
-  width: 100%;
-}
-.App .sendbird-og-message-item-body {
-  min-width: initial;
-  max-width: initial;
 }
 
 /* Channel list preview styles */
@@ -81,7 +54,8 @@ html {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   margin: 0;
 }
 .custom-channel-header button {
@@ -96,7 +70,7 @@ html {
 }
 
 .sendbird-modal__content {
-  max-width: 400px;
+  max-width: 420px;
   max-height: 730px;
 }
 
@@ -109,5 +83,5 @@ html {
 }
 
 .sendbird-user-list-item__subtitle {
-  width: 40%;
+  width: 45%;
 }

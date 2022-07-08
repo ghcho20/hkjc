@@ -17,9 +17,9 @@ function Index({ pageProps }) {
   const [activeTab, setActiveTab] = useState('home')
 
   return (
-    <div className='grid w-screen h-screen justify-center content-center'>
-      <div className='grid justify-center content-center rounded-3xl w-[420px] h-[780px] bg-stone-700'>
-        <div className='rounded-t-md w-[400px] h-[670px] bg-white'>
+    <div className='grid w-screen h-screen justify-center content-center p-0 m-0'>
+      <div className='grid justify-center content-center rounded-xl w-[590px] h-[1070px] bg-stone-700'>
+        <div className='flex justify-center rounded-t-md w-[580px] h-[980px] bg-white'>
           <SendbirdProvider appId={appId} userId='call01'>
             {activeTab==='home' && (<Home />)}
             {activeTab==='news' && (<News />)}
@@ -28,7 +28,7 @@ function Index({ pageProps }) {
             {activeTab==='account' && (<Account />)}
           </SendbirdProvider>
         </div>
-        <div className='rounded-b-md w-[400px] h-[60px] bg-white'>
+        <div className='rounded-b-md w-[580px] h-[60px] bg-white'>
           <Navi activeTab={activeTab} setActiveTab={setActiveTab} />
         </div>
       </div>
