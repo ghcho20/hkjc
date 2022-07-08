@@ -29,12 +29,20 @@ export default function App() {
         ) : (
           <ChannelList
             allowProfileEdit={true}
-            renderChannelPreview={({channel}) => (
-              <ChannelPreview
-                channel={channel}
-                onChannelSelect={onChannelSelect}
-              />
-            )}
+            renderChannelPreview={({channel}) => {
+                if (!channel.lastMessage) {
+                  setChannel(channel)
+                  return null
+                } else {
+                  return (
+                    <ChannelPreview
+                      channel={channel}
+                      onChannelSelect={onChannelSelect}
+                    />
+                  )
+                }
+              }
+            }
           />
         )}
     </div>
