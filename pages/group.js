@@ -28,6 +28,7 @@ export default function App() {
           />
         ) : (
           <ChannelList
+            allowProfileEdit={true}
             renderChannelPreview={({channel}) => (
               <ChannelPreview
                 channel={channel}
