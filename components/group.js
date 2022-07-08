@@ -6,7 +6,7 @@ import ChannelPreview from "../components/ChannelPreview";
 
 import { useState } from "react";
 
-export default function App() {
+export default function Group() {
   const [channel, setChannel] = useState(null);
 
   const onChannelSelect = (_channel) => {

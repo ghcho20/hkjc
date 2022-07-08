@@ -1,5 +1,3 @@
-import { useState, useEffect } from 'react'
-import { useRouter } from 'next/router'
 import { AiFillPlaySquare, AiOutlinePlaySquare } from 'react-icons/ai'
 import {
     RiUser5Line, RiUser5Fill,
@@ -16,92 +14,67 @@ const imgContainerClass =
 const imgClass = 'rounded-full'
 const tabClass = 'flex items-center w-[35px]'
 
-const Navi = props => {
-    const router = useRouter()
-    const [activeTabs, setActiveTabs] = useState(props.name)
-    useEffect(() => {
-        switch (activeTabs) {
-            case 'home':
-                router.push('/home')
-                break;
-            case 'news':
-                router.push('/news')
-                break;
-            case 'group':
-                router.push('/group')
-                break;
-            case 'open':
-                router.push('/open')
-                break;
-            case 'account':
-                router.push('/account')
-                break;
-            default:
-                router.push('/home')
-                break;
-        }
-    }, [activeTabs])
-
+const Navi = ({activeTab, setActiveTab}) => {
     return (
         <div className='w-full h-full flex justify-around items-center'>
             <div className={tabClass}>
                 <div className={imgContainerClass}>
                     <Image className={imgClass}
-                        src={activeTabs==='home'? homeSel:home}
-                        onClick={() => setActiveTabs('home')}
+                        src={activeTab==='home'? homeSel:home}
+                        onClick={() => setActiveTab('home')}
                     />
                 </div>
             </div>
             <div className={tabClass}>
-                {activeTabs === 'news' ?
+                {activeTab === 'news' ?
                     <RiNewspaperFill
                         size='35'
                         color='#000'
-                        onClick={() => setActiveTabs('news')}
+                        onClick={() => setActiveTab('news')}
                     /> :
                     <RiNewspaperLine
                         size='35'
                         color='#000'
-                        onClick={() => setActiveTabs('news')}
+                        onClick={() => setActiveTab('news')}
                     />}
             </div>
             <div className={tabClass}>
-                {activeTabs === 'group' ?
+                {activeTab === 'group' ?
                     <RiGroup2Fill
                         size='35'
                         color='#000'
-                        onClick={() => setActiveTabs('group')}
+                        onClick={() => setActiveTab('group')}
                     /> :
                     <RiGroup2Line
                         size='35'
                         color='#000'
-                        onClick={() => setActiveTabs('group')}
+                        onClick={() => setActiveTab('group')}
                     />}
             </div>
             <div className={tabClass}>
-                {activeTabs === 'open' ?
+                {activeTab === 'open' ?
                     <AiFillPlaySquare
                         size='35'
                         color='#000'
-                        onClick={() => setActiveTabs('open')}
+                        onClick={() => setActiveTab('open')}
                     /> :
                     <AiOutlinePlaySquare
                         size='35'
                         color='#000'
-                        onClick={() => setActiveTabs('open')}
+                        onClick={() => setActiveTab('open')}
                     />}
             </div>
             <div className={tabClass}>
-                {activeTabs === 'account' ?
+                {activeTab === 'account' ?
                     <RiUser5Fill
                         size='35'
                         color='#000'
-                        onClick={() => setActiveTabs('account')}
+                        onClick={() => setActiveTab('account')}
                     /> :
                     <RiUser5Line
                         size='35'
                         color='#000'
-                        onClick={() => setActiveTabs('account')}
+                        onClick={() => setActiveTab('account')}
                     />}
             </div>
         </div>
