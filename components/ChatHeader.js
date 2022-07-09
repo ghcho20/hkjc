@@ -5,7 +5,7 @@ import Image from "next/image";
 import { AiFillSetting } from 'react-icons/ai'
 import { AiOutlineFileSearch } from "react-icons/ai";
 
-const ChatHeader = ({ channel, onBack }) => {
+const ChatHeader = ({ channel, onBack, setSettings }) => {
     const sbState = useSendbirdStateContext()
     const { user } = sbState.stores.userStore
     // console.log('user ', user.userId, user.nickname, user.profileUrl)
@@ -22,8 +22,7 @@ const ChatHeader = ({ channel, onBack }) => {
                 }}
             />
             <AiFillSetting size={30} color='blueviolet'
-                onClick={() => {
-                }}
+                onClick={() => setSettings(true)}
             />
             </span>
         </div>
