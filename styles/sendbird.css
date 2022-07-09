@@ -1,5 +1,6 @@
 .App {
   font-family: sans-serif;
+  font-size: 1.3em;
   text-align: center;
 }
 
@@ -67,21 +68,4 @@
   margin-left: auto;
   flex: 1;
   text-align: left;
-}
-
-.sendbird-modal__content {
-  max-width: 420px;
-  max-height: 730px;
-}
-
-.sendbird-add-channel__rectangle {
-  max-width: 100%;
-}
-
-.sendbird-user-list-item {
-  max-width: 100%;
-}
-
-.sendbird-user-list-item__subtitle {
-  width: 45%;
 }
