@@ -14,6 +14,10 @@
   font-size: 12px;
 }
 
+.sendbird-message-search-pannel {
+  width: 100%;
+}
+
 /* Channel list preview styles */
 .channel-preview-wrapper {
   max-width: 100%;
