@@ -18,6 +18,29 @@
   width: 100%;
 }
 
+.sendbird-openchannel-user-message
+  .sendbird-openchannel-user-message__right
+  .sendbird-openchannel-user-message__right__top
+  .sendbird-openchannel-user-message__right__top__sender-name {
+  font-size: 0.9rem;
+}
+.sendbird-openchannel-user-message
+  .sendbird-openchannel-user-message__right
+  .sendbird-openchannel-user-message__right__bottom
+  .sendbird-openchannel-user-message__right__bottom__message {
+  font-size: 1.2rem;
+}
+.sendbird-openchannel-profile .sendbird-openchannel-profile__title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.sendbird-openchannel-settings__profile,
+.sendbird-openchannel-settings__url,
+.sendbird-openchannel-settings__header,
+.sendbird-openchannel-settings__delete-channel {
+  padding: 13px;
+}
+
 /* Channel list preview styles */
 .channel-preview-wrapper {
   max-width: 100%;

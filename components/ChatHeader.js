@@ -1,5 +1,4 @@
 import IconArrowLeft from "../public/icon-arrow-left.svg";
-import useSendbirdStateContext from "@sendbird/uikit-react/useSendbirdStateContext"
 import Image from "next/image";
 
 import { AiFillSetting } from 'react-icons/ai'
@@ -9,10 +8,6 @@ const ChatHeader = ({ channel,
                       onBack,
                       setSettings,
                       setShowSearch }) => {
-    const sbState = useSendbirdStateContext()
-    // const { user } = sbState.stores.userStore
-    // console.log('user ', user.userId, user.nickname, user.profileUrl)
-
     return (
         <div className="custom-channel-header">
             <button onClick={onBack}>
@@ -20,9 +15,11 @@ const ChatHeader = ({ channel,
             </button>
             <span>{channel.name? channel.name : `Group of ${channel.memberCount}`}</span>
             <span className="inline-flex space-x-4">
-            <AiOutlineFileSearch size={30} color='blueviolet'
-                onClick={() => setShowSearch(true)}
-            />
+            {setShowSearch && (
+                    <AiOutlineFileSearch size={30} color='blueviolet'
+                    onClick={() => setShowSearch(true)}
+                />
+            )}
             <AiFillSetting size={30} color='blueviolet'
                 onClick={() => setSettings(true)}
             />

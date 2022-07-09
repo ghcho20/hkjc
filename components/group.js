@@ -15,14 +15,6 @@ export default function Group() {
   const [startingPoint, setStartingPoint] = useState(0)
   const [highlightedMessage, setHighlightedMessage] = useState(0)
 
-  const onChannelSelect = (_channel) => {
-    setChannel(_channel);
-  };
-
-  const onBack = () => {
-    setChannel(null);
-  };
-
   return (
     <div className="App w-full h-full">
         {!settings && !showSearch && channel && (
@@ -36,7 +28,7 @@ export default function Group() {
             renderChannelHeader={() => (
               <ChatHeader
                 channel={channel}
-                onBack={onBack}
+                onBack={() => setChannel(null)}
                 setSettings={setSettings}
                 setShowSearch={setShowSearch}
               />
@@ -54,7 +46,7 @@ export default function Group() {
                   return (
                     <ChannelPreview
                       channel={channel}
-                      onChannelSelect={onChannelSelect}
+                      onChannelSelect={(_ch) => setChannel(_ch)}
                     />
                   )
                 }
