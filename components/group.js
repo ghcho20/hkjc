@@ -21,6 +21,7 @@ export default function Group() {
         {channel ? (
           <Channel
             channelUrl={channel.url}
+            useReaction={true}
             renderChannelHeader={() => (
               <ChatHeader channel={channel} onBack={onBack} />
             )}
