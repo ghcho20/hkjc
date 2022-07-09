@@ -48,7 +48,41 @@ body,
 .sendbird-openchannel-settings__url,
 .sendbird-openchannel-settings__header,
 .sendbird-openchannel-settings__delete-channel {
-  padding: 13px;
+  padding: 15px;
+}
+.sendbird-openchannel-settings__url {
+  display: flex;
+  flex-direction: row;
+}
+.sendbird-openchannel-settings__url-value {
+  font-size: 0.8em;
+  padding-left: 9px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+.sendbird-openchannel-settings__header
+  .sendbird-openchannel-settings__close-icon {
+  position: absolute;
+  right: 20px;
+  border-radius: 6px;
+  border-width: 2px;
+  border-color: darkslateblue;
+}
+.sendbird-openchannel-settings__participant
+  .sendbird-openchannel-settings__close-icon {
+  visibility: hidden;
+}
+.sendbird-participants-accordion__member {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  flex-direction: row;
+}
+.sendbird-participants-accordion__member
+  .sendbird-label--subtitle-2 {
+  padding-left: 9px;
+  padding-top: 5px;
 }
 
 .sendbird-conversation__scroll-bottom-button {
