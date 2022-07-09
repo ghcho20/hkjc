@@ -4,6 +4,16 @@
   text-align: center;
 }
 
+body,
+.App,
+.sendbird-conversation__messages {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.sendbird-conversation__messages .sendbird-conversation__messages-padding {
+  overflow-x: hidden;
+}
+
 .App .sendbird-channel-header,
 .App .sendbird-channel-list {
   width: 100%;
@@ -39,6 +49,10 @@
 .sendbird-openchannel-settings__header,
 .sendbird-openchannel-settings__delete-channel {
   padding: 13px;
+}
+
+.sendbird-conversation__scroll-bottom-button {
+  left: calc(100% - 70px);
 }
 
 /* Channel list preview styles */
