@@ -7,9 +7,12 @@ const ChannelPreview = ({ channel, onChannelSelect }) => {
         className="channel-preview-wrapper"
         onClick={() => onChannelSelect(channel)}
       >
-        <Image className="channel-preview-cover"
-          width={40} height={40}
-          src={channel.coverUrl? channel.coverUrl : coverDefault} />
+        {channel.coverUrl ?
+            (<img className='channel-preview-cover'
+                width={64} height={64} src={channel.coverUrl} />) :
+            (<Image className='channel-preview-cover'
+                width={64} height={64} src={coverDefault} />)
+        }
         <div className="pl-2">
           <div className="channel-preview-name">{channel.name}</div>
           <div className="channel-preview-last-message">

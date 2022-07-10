@@ -58,10 +58,12 @@ export default function Account({userId, setUserId}) {
                     w-[calc(100% - 20px)] \
                     border rounded-md m-[10px]'
                 >
-                    <Image className="channel-preview-cover"
-                        width={64} height={64}
-                        src={user.profileUrl? user.profileUrl : coverDefault}
-                    />
+                    {user.profileUrl ?
+                        (<img className='channel-preview-cover'
+                            width={64} height={64} src={user.profileUrl} />) :
+                        (<Image className='channel-preview-cover'
+                            width={64} height={64} src={coverDefault} />)
+                    }
                     <div className='font-serif mr-7'>
                         {user.nickname ? `${user.userId} / ${user.nickname}` : user.userId}
                     </div>
