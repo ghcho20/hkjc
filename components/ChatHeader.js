@@ -1,5 +1,6 @@
 import IconArrowLeft from "../public/icon-arrow-left.svg";
 import Image from "next/image";
+import Live from '../public/live.gif'
 
 import { AiFillSetting } from 'react-icons/ai'
 import { AiOutlineFileSearch } from "react-icons/ai";
@@ -8,7 +9,7 @@ const ChatHeader = ({ channel,
                       onBack,
                       setSettings,
                       setShowSearch }) => {
-    return (
+    return (<div className='flex flex-col'>
         <div className="custom-channel-header">
             <button onClick={onBack}>
             <Image width={20} heigth={20} src={IconArrowLeft} alt="Back button" />
@@ -25,7 +26,10 @@ const ChatHeader = ({ channel,
             />
             </span>
         </div>
-    )
+        {channel.channelType==='open' && (<div className='mb-5'>
+            <Image layout='responsive' src={Live} />
+        </div>)}
+    </div>)
 }
 
 export default ChatHeader;
