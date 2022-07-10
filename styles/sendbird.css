@@ -69,10 +69,6 @@ body,
   border-width: 2px;
   border-color: darkslateblue;
 }
-.sendbird-openchannel-settings__participant
-  .sendbird-openchannel-settings__close-icon {
-  visibility: hidden;
-}
 .sendbird-participants-accordion__member {
   display: flex;
   justify-content: center;
