@@ -1,14 +1,21 @@
 import IconArrowLeft from "../public/icon-arrow-left.svg";
 import Image from "next/image";
-import Live from '../public/live.gif'
+import Live1 from '../public/live1.gif'
+import Live2 from '../public/live2.gif'
+import Live3 from '../public/live3.gif'
+import Live4 from '../public/live4.gif'
+import Live5 from '../public/live5.gif'
 
 import { AiFillSetting } from 'react-icons/ai'
 import { AiOutlineFileSearch } from "react-icons/ai";
+
+const liveEvents = [Live1, Live2, Live3, Live4, Live5]
 
 const ChatHeader = ({ channel,
                       onBack,
                       setSettings,
                       setShowSearch }) => {
+    const eventId = Math.floor(Math.random()*10) % 5
     return (<div className='flex flex-col'>
         <div className="custom-channel-header">
             <button onClick={onBack}>
@@ -27,7 +34,7 @@ const ChatHeader = ({ channel,
             </span>
         </div>
         {channel.channelType==='open' && (<div className='mb-5'>
-            <Image layout='responsive' src={Live} />
+            <Image layout='responsive' src={liveEvents[eventId]} />
         </div>)}
     </div>)
 }
