@@ -9,13 +9,19 @@ import Live5 from '../public/live5.gif'
 import { AiFillSetting } from 'react-icons/ai'
 import { AiOutlineFileSearch } from "react-icons/ai";
 
+import { useState } from "react";
+
 const liveEvents = [Live1, Live2, Live3, Live4, Live5]
 
 const ChatHeader = ({ channel,
                       onBack,
                       setSettings,
                       setShowSearch }) => {
-    const eventId = Math.floor(Math.random()*10) % 5
+    const [eventId, setEventId] = useState(null)
+    if (!eventId) {
+        const eid = Math.floor(Math.random()*10) % 5
+        setEventId(eid)
+    }
     return (<div className='flex flex-col'>
         <div className="custom-channel-header">
             <button onClick={onBack}>
