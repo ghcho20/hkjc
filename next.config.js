@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['static.sendbird.com',],
+    domains: ['static.sendbird.com', 'encrypted-tbn0.gstatic.com'],
   },
 }
 

@@ -5,6 +5,9 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily: {
+      'serif': ['ui-serif', 'Georgia', 'Times', 'Cambria', 'Times New Roman'],
+    },
     extend: {},
   },
   plugins: [],
