@@ -18,10 +18,10 @@ const ChatHeader = ({ channel,
                       setSettings,
                       setShowSearch }) => {
     const [eventId, setEventId] = useState(null)
-    if (channel.channelType==='open' && !eventId) {
+    if (channel.channelType==='open' && eventId===null) {
         const seed = channel.url.slice(-1)
-        const eid = parseInt(seed) % 5
-        setEventId(eid + 1)
+        const eid = seed.charCodeAt(0) % 5
+        setEventId(eid)
     }
     return (<div className='flex flex-col'>
         <div className="custom-channel-header">
@@ -41,7 +41,7 @@ const ChatHeader = ({ channel,
             </span>
         </div>
         {channel.channelType==='open' && (<div className='mb-5'>
-            <Image layout='responsive' src={liveEvents[eventId-1]} />
+            <Image layout='responsive' src={liveEvents[eventId]} />
         </div>)}
     </div>)
 }
